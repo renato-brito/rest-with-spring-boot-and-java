@@ -1,8 +1,10 @@
 package br.com.rest.udemy.services;
 
 import br.com.rest.udemy.data.vo.v1.PersonVO;
+import br.com.rest.udemy.data.vo.v2.PersonVOV2;
 import br.com.rest.udemy.exceptions.ResourceNotFoundException;
 import br.com.rest.udemy.mapper.DozerMapper;
+import br.com.rest.udemy.mapper.custom.PersonMapper;
 import br.com.rest.udemy.model.Person;
 import br.com.rest.udemy.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class PersonServices {
     private Logger logger = Logger.getLogger(PersonServices.class.getName());
     @Autowired
     private PersonRepository repository;
+
+    @Autowired
+    private PersonMapper mapper;
 
     public PersonVO findById(Long id) {
         logger.info("findById: " + id);
@@ -38,6 +43,15 @@ public class PersonServices {
 
         var entity = DozerMapper.parseObject(person, Person.class);
         var vo = DozerMapper.parseObject(repository.save(entity), PersonVO.class);
+
+        return vo;
+    }
+
+    public PersonVOV2 createV2(PersonVOV2 person) {
+        logger.info("Creating one person with v2 !");
+
+        var entity = mapper.convertVoToEntity(person);
+        var vo = mapper.convertEntityToVo(repository.save(entity));
 
         return vo;
     }
