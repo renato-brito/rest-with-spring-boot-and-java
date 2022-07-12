@@ -1,6 +1,6 @@
 package br.com.rest.udemy.controller;
 
-import br.com.rest.udemy.model.Person;
+import br.com.rest.udemy.data.vo.v1.PersonVO;
 import br.com.rest.udemy.services.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -17,27 +17,27 @@ public class PersonController {
     private PersonServices personServices;
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person findById(@PathVariable(value = "id") Long id)  {
+    public PersonVO findById(@PathVariable(value = "id") Long id)  {
         return personServices.findById(id);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Person> findAll()  {
+    public List<PersonVO> findAll()  {
         return personServices.findAll();
     }
 
     @PostMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person create(@RequestBody Person person)  {
-        return personServices.create(person);
+    public PersonVO create(@RequestBody PersonVO personVO)  {
+        return personServices.create(personVO);
     }
 
     @PutMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person udpate(@RequestBody Person person)  {
-        return personServices.update(person);
+    public PersonVO udpate(@RequestBody PersonVO personVO)  {
+        return personServices.update(personVO);
     }
 
     @DeleteMapping(value = "/{id}")
