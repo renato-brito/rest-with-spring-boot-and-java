@@ -37,7 +37,7 @@ jobs:
       run: docker compose build
       
     - name: Push to Docker Hub Container Registry
-      run: docker tag ${{ secrets.DOKER_USERNAME }}/udemy:latest ${{ secrets.DOKER_USERNAME }}/udemy:${{ github.run_id }}  
+      run: docker tag ${{ secrets.DOCKER_USERNAME }}/udemy:latest ${{ secrets.DOCKER_USERNAME }}/udemy:${{ github.run_id }}  
            
-           docker push ${{ secrets.DOKER_USERNAME }}/udemy:${{ github.run_id }}
-           docker push ${{ secrets.DOKER_USERNAME }}/udemy:latest
+           docker push ${{ secrets.DOCKER_USERNAME }}/udemy:${{ github.run_id }}
+           docker push ${{ secrets.DOCKER_USERNAME }}/udemy:latest
