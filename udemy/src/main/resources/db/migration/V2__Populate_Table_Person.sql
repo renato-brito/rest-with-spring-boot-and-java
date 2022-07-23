@@ -1,0 +1,11 @@
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (1, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (8, '25 de Maio', 'Mary', 'F', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (3, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (7, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (5, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (10, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (9, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (11, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (12, '123 Main St', 'John', 'M', 'Doe');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (13, '123 Main St', 'Camila', 'F', 'Dutra');
+INSERT INTO rest_with_spring_boot.person (id, address, first_name, gender, last_name) VALUES (14, '123 Main St', 'Camila', 'F', 'Brito');
